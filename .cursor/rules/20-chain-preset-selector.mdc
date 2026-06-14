@@ -1,0 +1,15 @@
+---
+description: Select the chain preset from presets/ before any on-chain operation.
+alwaysApply: true
+---
+
+# Chain Preset Selector
+
+Before RPC calls or contract interactions:
+
+1. Identify target chain from user intent
+2. Load matching preset from `presets/` (e.g. `ethereum-mainnet.yaml`, `base-mainnet.yaml`)
+3. Use `knowledge_base` path in preset for contract addresses
+4. Verify `chain_id` matches connected network
+
+Never assume mainnet without explicit confirmation.

@@ -24,13 +24,11 @@ const CORE_FILES = [
   "scripts/install.ps1",
   "scripts/install_toolkit.py",
   "scripts/link-skills.js",
-  "scripts/validate-skills.js",
+  "scripts/validate-skills.mjs",
+  "scripts/validate-assets.mjs",
+  "scripts/run-tests.mjs",
   "hooks/README.md",
-  "hooks/hooks.json",
-  "hooks/session-start.sh",
-  "hooks/transaction-guard.sh",
-  "hooks/compliance-pre.sh",
-  "hooks/security-audit-pre.sh"
+  "hooks/session-start.sh"
 ];
 
 const AGENT_ADAPTERS = {
@@ -40,25 +38,9 @@ const AGENT_ADAPTERS = {
     ".cursor/rules/20-chain-preset-selector.mdc",
     ".cursor/rules/30-simulate-before-send.mdc"
   ],
-  Claude: [
-    ".claude/commands/simulate.md",
-    ".claude/commands/audit.md",
-    ".claude/commands/swap.md",
-    ".claude/commands/bridge.md",
-    ".claude/commands/screen.md",
-    ".claude/commands/review.md",
-    "AGENTS.md",
-    "CLAUDE.md"
-  ],
+  Claude: [".claude/commands/simulate.md", "AGENTS.md", "CLAUDE.md"],
   Copilot: [".github/copilot-instructions.md", "AGENTS.md"],
-  Gemini: [
-    ".gemini/commands/simulate.md",
-    ".gemini/commands/audit.md",
-    ".gemini/commands/swap.md",
-    ".gemini/commands/bridge.md",
-    ".gemini/commands/screen.md",
-    ".gemini/commands/review.md"
-  ],
+  Gemini: [".claude/commands/simulate.md", "AGENTS.md"],
   Kiro: [
     ".kiro/steering/product.md",
     ".kiro/steering/tech.md",
@@ -152,35 +134,23 @@ const RUNNABLE_EXAMPLES = {
   "Uniswap Swap Guardrails": [
     "examples/uniswap-swap-guardrails/README.md",
     "examples/uniswap-swap-guardrails/spec.md",
-    "examples/uniswap-swap-guardrails/plan.md",
-    "examples/uniswap-swap-guardrails/tasks.md",
     "examples/uniswap-swap-guardrails/Makefile",
     "examples/uniswap-swap-guardrails/scripts/simulate-swap.js",
-    "examples/uniswap-swap-guardrails/scripts/check-approval.js",
-    "examples/uniswap-swap-guardrails/config/chains.json",
-    "scripts/validate-skills.js"
+    "examples/uniswap-swap-guardrails/scripts/check-approval.js"
   ],
   "Compliance Screening Transfer": [
     "examples/compliance-screening-transfer/README.md",
-    "examples/compliance-screening-transfer/spec.md",
-    "examples/compliance-screening-transfer/plan.md",
-    "examples/compliance-screening-transfer/tasks.md",
     "examples/compliance-screening-transfer/Makefile",
     "examples/compliance-screening-transfer/scripts/screen-address.js",
     "examples/compliance-screening-transfer/scripts/travel-rule-check.js",
-    "examples/compliance-screening-transfer/data/sample-addresses.json",
-    "scripts/validate-skills.js"
+    "examples/compliance-screening-transfer/data/sample-addresses.json"
   ],
   "NFT Mint IPFS": [
     "examples/nft-mint-ipfs/README.md",
-    "examples/nft-mint-ipfs/spec.md",
-    "examples/nft-mint-ipfs/plan.md",
-    "examples/nft-mint-ipfs/tasks.md",
     "examples/nft-mint-ipfs/Makefile",
     "examples/nft-mint-ipfs/metadata/collection.json",
     "examples/nft-mint-ipfs/scripts/pin-metadata.js",
-    "examples/nft-mint-ipfs/scripts/validate-cid.js",
-    "scripts/validate-skills.js"
+    "examples/nft-mint-ipfs/scripts/validate-cid.js"
   ]
 };
 

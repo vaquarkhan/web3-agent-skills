@@ -1,0 +1,14 @@
+---
+description: Require eth_call simulation before every state-changing transaction.
+alwaysApply: true
+---
+
+# Simulate Before Send
+
+No state-changing transaction may be submitted until:
+
+1. `eth_call` or tenderly simulation succeeds
+2. Gas estimate completes without revert
+3. Guardrails in `guardrails/web3-guardrails.yaml` pass
+
+If simulation fails, stop and report the revert reason. Do not retry with higher gas without fixing the root cause.

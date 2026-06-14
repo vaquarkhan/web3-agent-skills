@@ -6,7 +6,7 @@ Contributions should be specific, verifiable, and grounded in real Web3 practice
 
 1. Create `skills/skill-XX-name/SKILL.md` with YAML frontmatter (`name`, `description`)
 2. Include: When to Use, Workflow, Guardrails, References
-3. Run `node scripts/validate-skills.js`
+3. Run `npm run validate`
 4. Update `skills-index.md` and `registry/assets.json`
 
 ## Adding an Example
@@ -22,6 +22,6 @@ Keep `vscode-extension/extension.js` and `jetbrains-plugin/InstallerData.kt` in 
 ## Pull Requests
 
 - One concern per PR when possible
-- Run `npm test` and `node scripts/validate-skills.js` before submitting
+- Run `npm run validate` and `npm test` before submitting
 
 Inspired by [data-engineering-agent-skills](https://github.com/vaquarkhan/data-engineering-agent-skills) and [agent-skills](https://agentskills.io).

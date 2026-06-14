@@ -51,6 +51,21 @@ function extractStarterPackPathsFromExtension() {
   return [...new Set(matches)];
 }
 
+function extractQuotedPathsFromExtension() {
+  if (!exists("vscode-extension/extension.js")) return [];
+  const content = fs.readFileSync(EXTENSION_JS, "utf8");
+  const matches = content.match(/"([a-zA-Z0-9_./-]+\.(md|mdc|yaml|yml|json|js|mjs|sh|py))"/g) ?? [];
+  return [...new Set(matches.map((m) => m.slice(1, -1)))];
+}
+
+function validateExtensionPaths() {
+  const errors = [];
+  for (const rel of extractQuotedPathsFromExtension()) {
+    if (!exists(rel)) errors.push(`vscode extension references missing file: ${rel}`);
+  }
+  return errors;
+}
+
 function validateRegistry(data) {
   const errors = [];
 
@@ -116,7 +131,7 @@ function main() {
   }
 
   const data = loadJson(REGISTRY_PATH);
-  const errors = validateRegistry(data);
+  const errors = [...validateRegistry(data), ...validateExtensionPaths()];
 
   if (errors.length) {
     console.error("Asset validation failed:");

@@ -1,0 +1,11 @@
+# Web3 Agent Skills — Windsurf Rules (example)
+
+Load AGENTS.md and guardrails/web3-guardrails.yaml at session start.
+
+- Never expose private keys or seed phrases
+- Simulate all transactions before execution
+- Screen recipient addresses via compliance MCP before transfers
+- Require user confirmation for transactions over $10,000 USD
+- Use chain presets from presets/ for RPC and contract addresses
+
+Copy to `.windsurfrules` or merge into your Windsurf rules file.
