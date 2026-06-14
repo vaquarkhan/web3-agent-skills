@@ -1,0 +1,123 @@
+{
+  "templates": [
+    { "id": "transaction-plan", "path": "templates/transaction-plan.yaml", "category": "operations" },
+    { "id": "compliance-checklist", "path": "templates/compliance-checklist.yaml", "category": "compliance" },
+    { "id": "security-audit-report", "path": "templates/security-audit-report.yaml", "category": "security" },
+    { "id": "bridge-transfer-plan", "path": "templates/bridge-transfer-plan.yaml", "category": "operations" },
+    { "id": "incident-runbook", "path": "templates/incident-runbook.md", "category": "operations" }
+  ],
+  "starter_packs": [
+    {
+      "id": "defi-trader",
+      "label": "DeFi Trader",
+      "path": "starter-packs/defi-trader-starter.yaml",
+      "install_files": [
+        "starter-packs/defi-trader-starter.yaml",
+        "presets/ethereum-mainnet.yaml",
+        "guardrails/web3-guardrails.yaml",
+        "mcp/defi-protocol.mcp.json",
+        "mcp/price-feed.mcp.json",
+        "mcp/blockchain-rpc.mcp.json",
+        "AGENTS.md",
+        "skills-index.md"
+      ]
+    },
+    {
+      "id": "compliance-officer",
+      "label": "Compliance Officer",
+      "path": "starter-packs/compliance-officer-starter.yaml",
+      "install_files": [
+        "starter-packs/compliance-officer-starter.yaml",
+        "templates/compliance-checklist.yaml",
+        "mcp/compliance-screening.mcp.json",
+        "guardrails/web3-guardrails.yaml",
+        "AGENTS.md",
+        "skills-index.md"
+      ]
+    },
+    {
+      "id": "nft-curator",
+      "label": "NFT Curator",
+      "path": "starter-packs/nft-curator-starter.yaml",
+      "install_files": [
+        "starter-packs/nft-curator-starter.yaml",
+        "presets/ethereum-mainnet.yaml",
+        "mcp/nft-metadata.mcp.json",
+        "mcp/ipfs-storage.mcp.json",
+        "AGENTS.md",
+        "skills-index.md"
+      ]
+    },
+    {
+      "id": "cross-chain",
+      "label": "Cross-Chain Bridge",
+      "path": "starter-packs/cross-chain-starter.yaml",
+      "install_files": [
+        "starter-packs/cross-chain-starter.yaml",
+        "templates/bridge-transfer-plan.yaml",
+        "presets/arbitrum-one.yaml",
+        "presets/ethereum-mainnet.yaml",
+        "mcp/blockchain-rpc.mcp.json",
+        "AGENTS.md",
+        "skills-index.md"
+      ]
+    },
+    {
+      "id": "mev-protection",
+      "label": "MEV Protection",
+      "path": "starter-packs/mev-protection-starter.yaml",
+      "install_files": [
+        "starter-packs/mev-protection-starter.yaml",
+        "references/mev-protection-patterns.md",
+        "presets/ethereum-mainnet.yaml",
+        "mcp/blockchain-rpc.mcp.json",
+        "mcp/price-feed.mcp.json",
+        "AGENTS.md",
+        "skills-index.md"
+      ]
+    },
+    {
+      "id": "rwa-institutional",
+      "label": "RWA Institutional",
+      "path": "starter-packs/rwa-institutional-starter.yaml",
+      "install_files": [
+        "starter-packs/rwa-institutional-starter.yaml",
+        "templates/compliance-checklist.yaml",
+        "mcp/compliance-screening.mcp.json",
+        "guardrails/web3-guardrails.yaml",
+        "AGENTS.md",
+        "skills-index.md"
+      ]
+    }
+  ],
+  "examples": [
+    { "id": "uniswap-swap-guardrails", "readme": "examples/uniswap-swap-guardrails/README.md", "runnable": true },
+    { "id": "compliance-screening-transfer", "readme": "examples/compliance-screening-transfer/README.md", "runnable": true },
+    { "id": "nft-mint-ipfs", "readme": "examples/nft-mint-ipfs/README.md", "runnable": true },
+    { "id": "defi-yield-vault-blueprint", "readme": "examples/defi-yield-vault-blueprint/README.md", "runnable": false },
+    { "id": "cross-chain-bridge-blueprint", "readme": "examples/cross-chain-bridge-blueprint/README.md", "runnable": false },
+    { "id": "dao-governance-blueprint", "readme": "examples/dao-governance-blueprint/README.md", "runnable": false }
+  ],
+  "mcp_templates": [
+    { "label": "Blockchain RPC", "path": "mcp/blockchain-rpc.mcp.json" },
+    { "label": "DeFi Protocol", "path": "mcp/defi-protocol.mcp.json" },
+    { "label": "NFT Metadata", "path": "mcp/nft-metadata.mcp.json" },
+    { "label": "Price Feed", "path": "mcp/price-feed.mcp.json" },
+    { "label": "Compliance Screening", "path": "mcp/compliance-screening.mcp.json" },
+    { "label": "IPFS Storage", "path": "mcp/ipfs-storage.mcp.json" }
+  ],
+  "plugin_packages": {
+    "vscode_extension": {
+      "package_dir": "vscode-extension",
+      "release_download": "https://github.com/vaquarkhan/web3-agent-skills/releases/latest",
+      "release_artifact_pattern": "web3-agent-skills-*.vsix",
+      "distribution_channels": ["github-releases", "vscode-marketplace", "open-vsx"]
+    },
+    "jetbrains_plugin": {
+      "package_dir": "jetbrains-plugin",
+      "release_download": "https://github.com/vaquarkhan/web3-agent-skills/releases/latest",
+      "release_artifact_pattern": "web3-agent-skills-*.zip",
+      "distribution_channels": ["github-releases", "jetbrains-marketplace"]
+    }
+  }
+}

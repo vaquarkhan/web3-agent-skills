@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "blockchain-rpc": {
+      "command": "node",
+      "args": ["tools/mcp-servers/blockchain-rpc-server/dist/index.js"],
+      "env": {
+        "ALCHEMY_ETH_URL": "${ALCHEMY_ETH_URL}",
+        "ETHEREUM_RPC_URL": "${ETHEREUM_RPC_URL}"
+      }
+    },
+    "defi-protocol": {
+      "command": "node",
+      "args": ["tools/mcp-servers/defi-protocol-server/dist/index.js"]
+    },
+    "nft-metadata": {
+      "command": "node",
+      "args": ["tools/mcp-servers/nft-metadata-server/dist/index.js"],
+      "env": { "RESERVOIR_API_KEY": "${RESERVOIR_API_KEY}" }
+    },
+    "price-feed": {
+      "command": "node",
+      "args": ["tools/mcp-servers/price-feed-server/dist/index.js"],
+      "env": { "COINGECKO_API_KEY": "${COINGECKO_API_KEY}" }
+    },
+    "compliance-screening": {
+      "command": "node",
+      "args": ["tools/mcp-servers/compliance-screening-server/dist/index.js"],
+      "env": { "CHAINALYSIS_API_KEY": "${CHAINALYSIS_API_KEY}" }
+    },
+    "ipfs-storage": {
+      "command": "node",
+      "args": ["tools/mcp-servers/ipfs-storage-server/dist/index.js"],
+      "env": { "PINATA_JWT": "${PINATA_JWT}" }
+    }
+  }
+}

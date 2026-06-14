@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "blockchain-rpc": {
+      "command": "node",
+      "args": ["tools/mcp-servers/blockchain-rpc-server/dist/index.js"],
+      "env": {
+        "ALCHEMY_ETH_URL": "${ALCHEMY_ETH_URL}",
+        "ETHEREUM_RPC_URL": "${ETHEREUM_RPC_URL}"
+      }
+    }
+  }
+}

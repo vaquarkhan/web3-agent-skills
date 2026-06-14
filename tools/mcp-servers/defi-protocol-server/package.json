@@ -1,0 +1,20 @@
+{
+  "name": "@web3-agent/defi-protocol-server",
+  "version": "1.0.0",
+  "description": "MCP server for DeFi protocol ABIs, subgraphs, and pool data",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": { "defi-protocol-server": "dist/index.js" },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}

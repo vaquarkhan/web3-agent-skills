@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "blockchain-rpc": {
+      "command": "node",
+      "args": ["tools/mcp-servers/blockchain-rpc-server/dist/index.js"],
+      "env": {
+        "ALCHEMY_ETH_URL": "${ALCHEMY_ETH_URL}",
+        "ALCHEMY_POLYGON_URL": "${ALCHEMY_POLYGON_URL}",
+        "ALCHEMY_ARB_URL": "${ALCHEMY_ARB_URL}",
+        "ALCHEMY_BASE_URL": "${ALCHEMY_BASE_URL}",
+        "ALCHEMY_OPT_URL": "${ALCHEMY_OPT_URL}"
+      }
+    }
+  }
+}

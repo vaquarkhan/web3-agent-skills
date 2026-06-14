@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "defi-protocol": {
+      "command": "node",
+      "args": ["tools/mcp-servers/defi-protocol-server/dist/index.js"],
+      "env": { "THE_GRAPH_API_KEY": "${THE_GRAPH_API_KEY}" }
+    }
+  }
+}

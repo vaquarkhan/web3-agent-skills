@@ -1,0 +1,23 @@
+{
+  "name": "@web3-agent/blockchain-rpc-server",
+  "version": "1.0.0",
+  "description": "MCP server for blockchain RPC interactions (Alchemy, Infura, QuickNode)",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "blockchain-rpc-server": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}

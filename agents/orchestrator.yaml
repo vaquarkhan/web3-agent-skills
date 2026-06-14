@@ -1,0 +1,82 @@
+# Web3 Agent Orchestrator
+
+Multi-skill agent configuration for complex Web3 workflows.
+
+## Agent: web3-general
+
+General-purpose Web3 agent with access to all 15 skills and 6 MCP servers.
+
+```yaml
+name: web3-general
+description: Full-stack Web3 agent for wallets, DeFi, NFTs, compliance, and analytics
+skills:
+  phase_1: [skill-01-wallet-management, skill-02-smart-contract-interaction, skill-03-defi-operations, skill-12-gas-optimization]
+  phase_2: [skill-04-nft-management, skill-07-token-analytics, skill-08-security-audit, skill-15-mev-protection]
+  phase_3: [skill-06-cross-chain-bridge, skill-09-compliance-aml, skill-10-identity-did]
+  phase_4: [skill-05-dao-governance, skill-11-oracle-data-feeds, skill-13-rwa-tokenization]
+  phase_5: [skill-14-social-reputation]
+mcp_servers:
+  - blockchain-rpc-server
+  - defi-protocol-server
+  - nft-metadata-server
+  - price-feed-server
+  - compliance-screening-server
+  - ipfs-storage-server
+guardrails: guardrails/web3-guardrails.yaml
+```
+
+## Agent: defi-trader
+
+Optimized for DeFi swap and yield workflows.
+
+```yaml
+name: defi-trader
+skills: [skill-01, skill-02, skill-03, skill-08, skill-12, skill-15]
+workflow:
+  1. screen_address (compliance)
+  2. security_audit (target contracts)
+  3. get_price (price-feed)
+  4. estimate_gas (blockchain-rpc)
+  5. execute_with_mev_protection
+```
+
+## Agent: compliance-officer
+
+Enterprise compliance-focused agent.
+
+```yaml
+name: compliance-officer
+skills: [skill-09-compliance-aml, skill-08-security-audit, skill-13-rwa-tokenization]
+mcp_servers: [compliance-screening-server, blockchain-rpc-server]
+rules:
+  - ALWAYS screen before any transfer
+  - NEVER bypass sanctions blocks
+  - Log all decisions with case ID
+```
+
+## Agent: nft-curator
+
+NFT minting, trading, and metadata workflows.
+
+```yaml
+name: nft-curator
+skills: [skill-04-nft-management, skill-02, skill-08, skill-10]
+mcp_servers: [nft-metadata-server, ipfs-storage-server, blockchain-rpc-server]
+workflow:
+  1. pin_json (ipfs-storage)
+  2. verify_collection (security-audit)
+  3. mint_or_trade
+```
+
+## Skill Routing
+
+| User Intent | Primary Skill | Supporting Skills |
+|-------------|---------------|-------------------|
+| Send tokens | skill-01 | skill-09, skill-12 |
+| Swap on Uniswap | skill-03 | skill-15, skill-12, skill-08 |
+| Bridge to Arbitrum | skill-06 | skill-09, skill-08 |
+| Mint NFT | skill-04 | skill-08, ipfs-storage |
+| Vote on proposal | skill-05 | skill-02 |
+| Check if token is security | skill-09 | skill-13 |
+| Analyze whale wallet | skill-07 | price-feed |
+| Audit new contract | skill-08 | skill-02 |

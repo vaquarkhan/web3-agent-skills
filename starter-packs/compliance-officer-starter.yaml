@@ -1,0 +1,11 @@
+id: compliance-officer
+label: Compliance Officer
+description: Sanctions screening, Travel Rule, MiCA, and audit trails
+skills:
+  - skill-09-compliance-aml
+  - skill-08-security-audit
+  - skill-13-rwa-tokenization
+mcp_servers:
+  - compliance-screening
+  - blockchain-rpc
+example: examples/compliance-screening-transfer

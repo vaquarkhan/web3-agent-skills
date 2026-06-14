@@ -1,0 +1,14 @@
+<idea-plugin>
+  <id>com.vaquarkhan.web3agentskills</id>
+  <name>Web3 Agent Skills</name>
+  <vendor>Vaquar Khan</vendor>
+  <description>Install Web3 agent skill packs, MCP templates, guardrails, and examples into your project.</description>
+  <depends>com.intellij.modules.platform</depends>
+  <actions>
+    <group id="Web3AgentSkills.Group" text="Web3 Agent Skills" popup="true">
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+      <action id="Web3AgentSkills.InstallCore" class="com.vaquarkhan.web3agentskills.InstallCoreAction" text="Install Core Pack"/>
+      <action id="Web3AgentSkills.InstallFull" class="com.vaquarkhan.web3agentskills.InstallFullAction" text="Install Full Toolkit"/>
+    </group>
+  </actions>
+</idea-plugin>

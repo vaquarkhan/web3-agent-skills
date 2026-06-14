@@ -1,0 +1,14 @@
+---
+description: Enforce Web3 guardrails from guardrails/web3-guardrails.yaml on every write operation.
+alwaysApply: true
+---
+
+# Guardrails First
+
+Before any on-chain write:
+1. Read `guardrails/web3-guardrails.yaml`
+2. Run `/audit` for unknown contracts
+3. Run `/screen` for recipient addresses
+4. Run `/simulate` before submit
+
+Block on CRITICAL risk. Warn on unlimited approvals.

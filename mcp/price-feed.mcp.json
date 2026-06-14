@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "price-feed": {
+      "command": "node",
+      "args": ["tools/mcp-servers/price-feed-server/dist/index.js"],
+      "env": { "COINGECKO_API_KEY": "${COINGECKO_API_KEY}" }
+    }
+  }
+}

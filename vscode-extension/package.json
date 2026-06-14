@@ -1,0 +1,81 @@
+{
+  "name": "web3-agent-skills",
+  "displayName": "Web3 Agent Skills",
+  "description": "Install Web3 agent skill packs, chain presets, MCP templates, guardrails, and runnable examples into a VS Code workspace.",
+  "version": "1.0.0",
+  "publisher": "ViquarKhan",
+  "publisherDisplayName": "Vaquar Khan",
+  "license": "MIT",
+  "homepage": "https://github.com/vaquarkhan/web3-agent-skills",
+  "bugs": {
+    "url": "https://github.com/vaquarkhan/web3-agent-skills/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "extensionKind": ["workspace"],
+  "categories": ["Other"],
+  "galleryBanner": {
+    "color": "#1a1a2e",
+    "theme": "dark"
+  },
+  "keywords": [
+    "web3",
+    "blockchain",
+    "defi",
+    "ethereum",
+    "agent-skills",
+    "mcp",
+    "cursor",
+    "copilot",
+    "windsurf",
+    "vscodium",
+    "claude",
+    "nft",
+    "smart-contracts",
+    "compliance"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vaquarkhan/web3-agent-skills.git"
+  },
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "web3AgentSkills.installFullToolkit",
+        "title": "Web3 Agent Skills: Install Full Toolkit"
+      },
+      {
+        "command": "web3AgentSkills.installCorePack",
+        "title": "Web3 Agent Skills: Install Core Pack"
+      },
+      {
+        "command": "web3AgentSkills.installAgentAdapters",
+        "title": "Web3 Agent Skills: Install Agent Adapters"
+      },
+      {
+        "command": "web3AgentSkills.installStarterPack",
+        "title": "Web3 Agent Skills: Install Starter Pack"
+      },
+      {
+        "command": "web3AgentSkills.installMcpTemplates",
+        "title": "Web3 Agent Skills: Install MCP Templates"
+      },
+      {
+        "command": "web3AgentSkills.scaffoldRunnableExample",
+        "title": "Web3 Agent Skills: Scaffold Runnable Example"
+      }
+    ],
+    "configuration": {
+      "title": "Web3 Agent Skills",
+      "properties": {
+        "web3AgentSkills.rawBaseUrl": {
+          "type": "string",
+          "default": "https://raw.githubusercontent.com/vaquarkhan/web3-agent-skills/main",
+          "description": "Raw GitHub base URL when local extension assets are unavailable."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "compliance-screening": {
+      "command": "node",
+      "args": ["tools/mcp-servers/compliance-screening-server/dist/index.js"],
+      "env": { "CHAINALYSIS_API_KEY": "${CHAINALYSIS_API_KEY}" }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+id: defi-trader
+label: DeFi Trader
+description: Swap, lend, stake with MEV protection and security audits
+skills:
+  - skill-01-wallet-management
+  - skill-02-smart-contract-interaction
+  - skill-03-defi-operations
+  - skill-08-security-audit
+  - skill-12-gas-optimization
+  - skill-15-mev-protection
+mcp_servers:
+  - blockchain-rpc
+  - defi-protocol
+  - price-feed
+preset: presets/ethereum-mainnet.yaml
+example: examples/uniswap-swap-guardrails

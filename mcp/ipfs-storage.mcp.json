@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ipfs-storage": {
+      "command": "node",
+      "args": ["tools/mcp-servers/ipfs-storage-server/dist/index.js"],
+      "env": { "PINATA_JWT": "${PINATA_JWT}" }
+    }
+  }
+}

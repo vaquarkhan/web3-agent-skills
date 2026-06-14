@@ -1,0 +1,26 @@
+{
+  "name": "web3-agent-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Complete Web3 agent skills, MCP servers, and knowledge base",
+  "workspaces": [
+    "tools/mcp-servers/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "node --test tests/skills/coverage.test.mjs",
+    "validate": "node scripts/validate-skills.mjs",
+    "link-skills": "node scripts/link-skills.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "web3",
+    "agent-skills",
+    "mcp",
+    "defi",
+    "blockchain"
+  ],
+  "license": "MIT"
+}

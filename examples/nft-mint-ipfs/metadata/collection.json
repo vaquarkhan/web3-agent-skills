@@ -1,0 +1,9 @@
+{
+  "name": "Web3 Agent Skills Collection",
+  "description": "Example NFT collection for agent skill demonstration",
+  "image": "ipfs://QmExample",
+  "attributes": [
+    { "trait_type": "Skill", "value": "NFT Management" },
+    { "trait_type": "Phase", "value": "2" }
+  ]
+}

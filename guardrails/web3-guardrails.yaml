@@ -1,0 +1,113 @@
+# Web3 Guardrails
+
+All agent skills MUST enforce these rules. Violations require blocking the action and notifying the user.
+
+## Critical (Block Immediately)
+
+```yaml
+never_expose_secrets:
+  description: Never output, log, store, or transmit private keys, seed phrases, or mnemonics
+  action: BLOCK
+  applies_to: all_skills
+
+block_unverified_contracts:
+  description: Block write interactions with unverified contracts unless user explicitly overrides
+  action: BLOCK
+  check: etherscan_verification OR bytecode_hash_match OR user_override
+
+block_sanctioned_addresses:
+  description: Block transfers to/from sanctioned addresses
+  action: BLOCK
+  check: compliance-screening-server.screen_address
+  applies_to: all_transfer_skills
+
+block_rug_pull_patterns:
+  description: Block interaction when honeypot, unlimited mint, or hidden fee detected
+  action: BLOCK
+  check: skill-08-security-audit
+  applies_to: skill-03, skill-04, skill-02
+```
+
+## Warnings (Require User Acknowledgment)
+
+```yaml
+unlimited_approval_warning:
+  description: Warn when token approval is type(uint256).max or unlimited
+  action: WARN
+  requires: explicit_user_confirmation
+
+high_value_confirmation:
+  description: Require confirmation for transactions exceeding USD threshold
+  action: CONFIRM
+  threshold_usd: 10000
+  applies_to: all_write_operations
+
+bridge_large_transfer:
+  description: Warn on bridge transfers > $10,000 without security review
+  action: WARN
+  threshold_usd: 10000
+  applies_to: skill-06
+
+slippage_high:
+  description: Warn when slippage tolerance > 3%
+  action: WARN
+  applies_to: skill-03, skill-15
+```
+
+## Required Pre-Execution
+
+```yaml
+simulate_before_execute:
+  description: All state-changing transactions must be simulated first
+  action: REQUIRE
+  method: eth_call OR tenderly_simulate
+  applies_to: all_write_operations
+
+sanctions_screen:
+  description: Screen recipient address before every outbound transfer
+  action: REQUIRE
+  tool: compliance-screening-server.screen_address
+  applies_to: skill-01, skill-03, skill-06, skill-13
+
+contract_verification:
+  description: Verify contract source before first interaction
+  action: REQUIRE
+  applies_to: skill-02, skill-03, skill-04
+```
+
+## Compliance
+
+```yaml
+jurisdiction_awareness:
+  description: Apply jurisdiction-specific rules based on user/entity location
+  regulations:
+    EU: [MiCA, TFR, DORA, AMLD6]
+    US: [SEC_Howey, FinCEN_BSA, IRS_1099_DA]
+    UK: [FCA_registration, financial_promotions]
+    SG: [MAS_PSA]
+    JP: [FSA_registration, stablecoin_rules]
+    UAE: [VARA, ADGM]
+    GLOBAL: [FATF_Travel_Rule]
+
+travel_rule:
+  description: Collect originator/beneficiary info for VASP transfers above threshold
+  action: REQUIRE
+  applies_to: skill-09
+```
+
+## Agent Behavior
+
+```yaml
+prefer_exact_approvals:
+  description: Use exact token approval amounts, not unlimited
+  default: true
+
+prefer_private_mempool:
+  description: Use private tx submission for MEV-exposed operations > $1,000
+  default: true
+  applies_to: skill-03, skill-15
+
+log_all_screenings:
+  description: Log compliance screening results with timestamp
+  retention_days: 2555  # 7 years for AML
+```

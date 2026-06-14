@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "nft-metadata": {
+      "command": "node",
+      "args": ["tools/mcp-servers/nft-metadata-server/dist/index.js"],
+      "env": { "RESERVOIR_API_KEY": "${RESERVOIR_API_KEY}" }
+    }
+  }
+}

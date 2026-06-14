@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.agents/skills/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+coverage/
+.idea/
+.vscode/
+*.tsbuildinfo
+*.vsix
+jetbrains-plugin/build/
+.gradle/
