@@ -1,5 +1,7 @@
 # Web3 Security Checklist
 
+> **Provenance:** OWASP Smart Contract Top 10 (2025), Consensys smart contract best practices, Trail of Bits building secure contracts. Last reviewed 2026-06-01.
+
 Pre-interaction checklist for agents:
 
 - [ ] Contract verified on block explorer

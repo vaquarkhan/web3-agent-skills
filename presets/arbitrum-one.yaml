@@ -9,3 +9,4 @@ skills:
   - skill-06-cross-chain-bridge
   - skill-12-gas-optimization
 guardrails: guardrails/web3-guardrails.yaml
+knowledge_base: knowledge-base/chains/arbitrum/README.md

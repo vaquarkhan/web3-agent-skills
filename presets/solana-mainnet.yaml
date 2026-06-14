@@ -1,0 +1,15 @@
+name: solana-mainnet
+cluster: mainnet-beta
+native_token: SOL
+rpc_env: SOLANA_RPC_URL
+explorer: https://solscan.io
+type: svm
+programs:
+  system: "11111111111111111111111111111111"
+  token: "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+  associated_token: "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+skills:
+  - skill-01-wallet-management
+  - skill-07-token-analytics
+guardrails: guardrails/web3-guardrails.yaml
+knowledge_base: knowledge-base/chains/solana/chain.yaml

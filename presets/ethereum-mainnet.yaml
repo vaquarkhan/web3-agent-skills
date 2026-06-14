@@ -11,3 +11,4 @@ skills:
   - skill-12-gas-optimization
   - skill-15-mev-protection
 guardrails: guardrails/web3-guardrails.yaml
+knowledge_base: knowledge-base/chains/ethereum/chain.yaml

@@ -1,0 +1,14 @@
+id: mev-protection
+label: MEV Protection
+description: Flashbots, private mempool, and TWAP execution for high-value swaps
+skills:
+  - skill-03-defi-operations
+  - skill-12-gas-optimization
+  - skill-15-mev-protection
+  - skill-08-security-audit
+mcp_servers:
+  - blockchain-rpc
+  - price-feed
+  - defi-protocol
+preset: presets/ethereum-mainnet.yaml
+example: examples/uniswap-swap-guardrails

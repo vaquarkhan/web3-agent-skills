@@ -1,50 +1,32 @@
-# Knowledge Base Index
+# Knowledge Base
 
-Reference documentation for Web3 Agent Skills. Skills load these files on demand via progressive disclosure.
+Structured reference data for Web3 Agent Skills. Agents load these files on demand.
 
-## Chains
+## Seed Data (verified)
 
-| Chain | Path | Status |
-|-------|------|--------|
-| Ethereum | [chains/ethereum/](chains/ethereum/) | Complete |
-| Solana | [chains/solana/](chains/solana/) | Complete |
-| Polygon | [chains/polygon/](chains/polygon/) | Complete |
-| Arbitrum | [chains/arbitrum/](chains/arbitrum/) | Complete |
-| Base | [chains/base/](chains/base/) | Complete |
-| Optimism | [chains/optimism/](chains/optimism/) | Complete |
-| Avalanche | [chains/avalanche/](chains/avalanche/) | Complete |
-| BNB | [chains/bnb/](chains/bnb/) | Complete |
-| Cosmos | [chains/cosmos/](chains/cosmos/) | Stub |
-| Bitcoin L2s | [chains/bitcoin-l2/](chains/bitcoin-l2/) | Stub |
-| TON | [chains/ton/](chains/ton/) | Stub |
-| Sui/Aptos | [chains/sui-aptos/](chains/sui-aptos/) | Stub |
+Each major chain/protocol includes machine-readable seed files with `provenance` blocks (source URL, last verified date):
 
-## Protocols
+| Path | Contents |
+|------|----------|
+| [chains/ethereum/chain.yaml](chains/ethereum/chain.yaml) | Chain ID, RPC env vars, key contracts |
+| [chains/polygon/chain.yaml](chains/polygon/chain.yaml) | Polygon PoS addresses |
+| [chains/base/chain.yaml](chains/base/chain.yaml) | Base L2 contracts + bridge portal |
+| [chains/solana/chain.yaml](chains/solana/chain.yaml) | Solana program IDs, derivation path |
+| [protocols/uniswap/contracts.yaml](protocols/uniswap/contracts.yaml) | Router/factory per chain |
+| [protocols/aave/contracts.yaml](protocols/aave/contracts.yaml) | Pool addresses, health factor defaults |
+| [regulations/mica/overview.yaml](regulations/mica/overview.yaml) | EU 2023/1114 categories + effective dates |
+| [standards/erc20/abi.json](standards/erc20/abi.json) | Minimal ERC-20 ABI |
 
-- [Uniswap](protocols/uniswap/) — V2/V3/V4 DEX
-- [Aave](protocols/aave/) — Lending V3
-- [Compound](protocols/compound/) — Comet markets
-- [MakerDAO](protocols/makerdao/) — DAI, Spark
-- [Lido](protocols/lido/) — Liquid staking
-- [EigenLayer](protocols/eigenlayer/) — Restaking
+README files in each directory provide human-readable summaries. Extend with your own org-specific addresses — keep `provenance` when adding entries.
 
-## Standards
+## Directory Index
 
-- [ERC-20](standards/erc20/) — Fungible tokens
-- [ERC-721](standards/erc721/) — NFTs
-- [ERC-1155](standards/erc1155/) — Multi-token
-- [ERC-4626](standards/erc4626/) — Tokenized vaults
-- [ERC-6551](standards/erc6551/) — Token bound accounts
+- **chains/** — per-chain RPC, explorers, native tokens, key contracts
+- **protocols/** — DeFi protocol addresses and subgraphs
+- **standards/** — ERC ABIs and interface notes
+- **regulations/** — MiCA, Travel Rule, FATF, SEC Howey
+- **security/** — vulnerability patterns, audit checklists, exploit references
 
-## Regulations
+## Validation
 
-- [MiCA](regulations/mica/) — EU crypto regulation
-- [Travel Rule](regulations/travel-rule/) — FATF R.16
-- [FATF](regulations/fatf/) — Global AML framework
-- [SEC Howey](regulations/sec-howey/) — US securities test
-
-## Security
-
-- [Common Vulnerabilities](security/common-vulnerabilities/)
-- [Audit Patterns](security/audit-patterns/)
-- [Exploit DB](security/exploit-db/)
+Run `npm run validate:assets` to confirm preset → knowledge_base paths resolve.

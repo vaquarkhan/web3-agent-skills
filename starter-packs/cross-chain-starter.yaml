@@ -1,0 +1,16 @@
+id: cross-chain
+label: Cross-Chain Bridge
+description: Bridge assets with security review and compliance screening
+skills:
+  - skill-06-cross-chain-bridge
+  - skill-08-security-audit
+  - skill-09-compliance-aml
+  - skill-12-gas-optimization
+mcp_servers:
+  - blockchain-rpc
+  - compliance-screening
+  - price-feed
+presets:
+  - presets/ethereum-mainnet.yaml
+  - presets/arbitrum-one.yaml
+example: examples/cross-chain-bridge-blueprint

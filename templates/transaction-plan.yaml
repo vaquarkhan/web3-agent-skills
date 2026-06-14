@@ -1,0 +1,21 @@
+# Transaction Plan
+transaction:
+  chain: ""
+  from: ""
+  to: ""
+  value_usd: 0
+  calldata: ""
+steps:
+  - id: verify_contract
+    status: pending
+  - id: simulate
+    status: pending
+  - id: screen_recipient
+    status: pending
+  - id: estimate_gas
+    status: pending
+  - id: user_confirmation
+    required_if_value_usd_gt: 10000
+    status: pending
+guardrails:
+  - guardrails/web3-guardrails.yaml

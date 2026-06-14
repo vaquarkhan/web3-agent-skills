@@ -1,0 +1,25 @@
+# Bridge Transfer Plan
+source:
+  chain: ""
+  token: ""
+  amount: ""
+destination:
+  chain: ""
+  recipient: ""
+  expected_received: ""
+bridge:
+  protocol: ""
+  type: canonical  # canonical | liquidity | messaging
+security:
+  tvl_usd: null
+  audit_report: null
+  test_amount_first: true
+checks:
+  - id: bridge_contract_verified
+    status: pending
+  - id: screen_recipient
+    status: pending
+  - id: simulate_deposit
+    status: pending
+  - id: monitor_claim
+    status: pending

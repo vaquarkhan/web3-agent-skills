@@ -1,0 +1,20 @@
+regulation: MiCA
+full_name: Markets in Crypto-Assets Regulation
+legal_reference: "Regulation (EU) 2023/1114"
+in_force: "2024-06-30"
+transitional_notes: CASP authorization phased through 2026
+token_categories:
+  - id: EMT
+    name: E-Money Token
+    requirement: 1:1 fiat reserve, redemption rights
+  - id: ART
+    name: Asset-Referenced Token
+    requirement: diversified reserve, whitepaper
+  - id: other
+    name: Other Crypto-Asset
+    requirement: whitepaper notification, CASP license for services
+jurisdictions: [EU, EEA]
+provenance:
+  source: Official Journal of the European Union L150, 9 June 2023
+  url: https://eur-lex.europa.eu/eli/reg/2023/1114/oj
+  last_reviewed: "2026-06-01"

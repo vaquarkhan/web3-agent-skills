@@ -1,0 +1,24 @@
+chain: base
+chain_id: 8453
+native_token:
+  symbol: ETH
+  decimals: 18
+rpc:
+  env_vars: [ALCHEMY_BASE_URL, BASE_RPC_URL]
+explorers:
+  - name: basescan
+    url: https://basescan.org
+contracts:
+  multicall3: "0xcA11bde05977b3631167028862bE2a173976CA11"
+  weth: "0x4200000000000000000000000000000000000006"
+  uniswap_v3_router: "0x2626664c2603336E57B271c5C0b26F421741e481"
+bridge:
+  canonical_l1: ethereum
+  portal: "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e"
+gas:
+  type: op_stack
+  notes: L1 data fee + L2 execution fee
+provenance:
+  source: Base mainnet (OP Stack)
+  last_verified: "2026-06-01"
+  verify_at: https://basescan.org

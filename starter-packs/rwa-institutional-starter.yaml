@@ -1,0 +1,14 @@
+id: rwa-institutional
+label: RWA Institutional
+description: Regulated tokenization with KYC, ERC-3643, and compliance workflows
+skills:
+  - skill-09-compliance-aml
+  - skill-13-rwa-tokenization
+  - skill-08-security-audit
+  - skill-11-oracle-data-feeds
+mcp_servers:
+  - compliance-screening
+  - blockchain-rpc
+  - price-feed
+preset: presets/ethereum-mainnet.yaml
+example: examples/defi-yield-vault-blueprint

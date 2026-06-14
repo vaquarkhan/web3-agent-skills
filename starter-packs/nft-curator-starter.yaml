@@ -1,0 +1,14 @@
+id: nft-curator
+label: NFT Curator
+description: Mint, trade, and manage NFTs with IPFS metadata and security checks
+skills:
+  - skill-04-nft-management
+  - skill-02-smart-contract-interaction
+  - skill-08-security-audit
+  - skill-10-identity-did
+mcp_servers:
+  - nft-metadata
+  - ipfs-storage
+  - blockchain-rpc
+preset: presets/ethereum-mainnet.yaml
+example: examples/nft-mint-ipfs

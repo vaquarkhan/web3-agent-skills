@@ -1,0 +1,21 @@
+chain: solana
+cluster: mainnet-beta
+native_token:
+  symbol: SOL
+  decimals: 9
+rpc:
+  env_vars: [SOLANA_RPC_URL]
+explorers:
+  - name: solscan
+    url: https://solscan.io
+programs:
+  system: "11111111111111111111111111111111"
+  token: "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+  associated_token: "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+  memo: "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"
+derivation:
+  path: "m/44'/501'/n'/0'"
+provenance:
+  source: Solana mainnet-beta program IDs
+  last_verified: "2026-06-01"
+  verify_at: https://solscan.io

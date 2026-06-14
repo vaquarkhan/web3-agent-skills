@@ -1,0 +1,17 @@
+# Security Audit Report
+contract:
+  address: ""
+  chain: ""
+  verified: false
+verdict:
+  risk: PENDING  # LOW | MEDIUM | HIGH | CRITICAL
+  recommendation: PENDING  # PROCEED | CAUTION | BLOCK
+findings: []
+checks:
+  honeypot: pending
+  unlimited_mint: pending
+  hidden_fees: pending
+  proxy_timelock: pending
+  liquidity_locked: pending
+audited_at: null
+auditor: skill-08-security-audit

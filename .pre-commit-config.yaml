@@ -1,0 +1,18 @@
+repos:
+  - repo: local
+    hooks:
+      - id: validate-skills
+        name: validate skills
+        entry: node scripts/validate-skills.mjs
+        language: system
+        pass_filenames: false
+      - id: validate-assets
+        name: validate assets
+        entry: node scripts/validate-assets.mjs
+        language: system
+        pass_filenames: false
+      - id: web3-tests
+        name: web3 tests
+        entry: npm test
+        language: system
+        pass_filenames: false

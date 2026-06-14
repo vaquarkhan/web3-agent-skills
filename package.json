@@ -1,6 +1,6 @@
 {
   "name": "web3-agent-skills",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Complete Web3 agent skills, MCP servers, and knowledge base",
   "workspaces": [
@@ -8,8 +8,10 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
-    "test": "node --test tests/skills/coverage.test.mjs",
-    "validate": "node scripts/validate-skills.mjs",
+    "test": "node scripts/run-tests.mjs",
+    "validate": "node scripts/validate-skills.mjs && node scripts/validate-assets.mjs",
+    "validate:assets": "node scripts/validate-assets.mjs",
+    "eval": "node evals/run.mjs",
     "link-skills": "node scripts/link-skills.js"
   },
   "engines": {

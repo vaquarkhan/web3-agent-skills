@@ -1,0 +1,17 @@
+protocol: aave
+version: v3
+ethereum:
+  pool: "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"
+  pool_addresses_provider: "0x2f39d218133AFaB8F2B819B1066a7e862A5E5729"
+  oracle: "0x54586bE62E3c81De12EF115AD5fC15317359eB0c0"
+polygon:
+  pool: "0x794613D741A192057a5eFB672d8943427AD7832F"
+health_factor:
+  liquidation_threshold: 1.0
+  recommended_minimum: 1.5
+subgraph:
+  ethereum: https://api.thegraph.com/subgraphs/name/aave/protocol-v3
+provenance:
+  source: Aave address book
+  docs: https://docs.aave.com/developers/deployed-contracts/v3-mainnet
+  last_verified: "2026-06-01"

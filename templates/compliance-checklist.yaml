@@ -1,0 +1,18 @@
+# Compliance Checklist
+jurisdiction: GLOBAL
+screening:
+  provider: compliance-screening-server
+  status: pending
+  screened_at: null
+travel_rule:
+  required: false
+  threshold_usd: 3000
+  jurisdiction: US
+checks:
+  - id: sanctions_screen
+    status: pending
+  - id: pep_check
+    status: pending
+  - id: travel_rule_collect
+    status: not_applicable
+retention_years: 7

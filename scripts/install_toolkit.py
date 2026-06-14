@@ -15,7 +15,7 @@ CORE_PATHS = [
     "docs/getting-started.md", "docs/cursor-setup.md", "docs/jetbrains-setup.md",
     "mcp", "examples/README.md",
     "scripts/install.sh", "scripts/install.ps1", "scripts/install_toolkit.py",
-    "scripts/link-skills.js", "scripts/validate-skills.js",
+    "scripts/link-skills.js", "scripts/validate-skills.mjs", "scripts/validate-assets.mjs",
 ]
 
 TOOL_PATHS = {
